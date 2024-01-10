@@ -21,11 +21,12 @@
     type="application/json+oembed"
     href={createOembedLink($page.url).toString()}
   />
+  <base href={$page.url.origin} />
 </svelte:head>
 
 <AppShell>
   <div class="container mx-auto p-8 space-y-8">
-    <h1 class="h1">oEmbed Examples</h1>
+    <h1 class="h1"><a href="/">oEmbed Examples</a></h1>
     <slot />
     <Footer />
   </div>

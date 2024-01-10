@@ -5,6 +5,14 @@
 <div class="block card card-hover p-4">
   <section class="p-4">
     <a
+      href="https://oembed.com/#section1"
+      target="_blank"
+      class="btn variant-filled"
+    >
+      <span><img class="h-6" /></span>
+      <span>oEmbed Specification</span>
+    </a>
+    <a
       href="https://github.com/Lachee/oembed-example"
       class="btn variant-filled"
     >
