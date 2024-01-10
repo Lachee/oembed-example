@@ -1,4 +1,4 @@
-import { Type, type PhotoOEmbed, type VideoOEmbed } from '$lib/oembed';
+import { Type, type PhotoOEmbed, type VideoOEmbed, type RichOEmbed } from '$lib/oembed';
 import { json, type RequestHandler } from '@sveltejs/kit';
 
 /** Generates oembed links */
@@ -13,9 +13,9 @@ export const GET: RequestHandler = async (evt) => {
 
     // We give up!
     return json({
-        type: Type.video,
+        type: Type.rich,
         version: '1.0',
-        title: 'Example Video',
+        title: 'Example Rich Content',
         thumbnail_url: thumbnailURL,
         thumbnail_width: 480,
         thumbnail_height: 270,
@@ -23,8 +23,8 @@ export const GET: RequestHandler = async (evt) => {
         provider_url: 'https://lachee.dev/',
 
 
-        html: `<video width="480" height="270" src="${videoURL}" controls></video>`,
-        width: 1080,
-        height: 1350,
-    } satisfies VideoOEmbed);
+        html: `<marquee>This is a rich embed</marquee>`,
+        width: 250,
+        height: 50,
+    } satisfies RichOEmbed);
 };

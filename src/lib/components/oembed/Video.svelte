@@ -1,6 +1,7 @@
 <script lang="ts">
   import type { VideoOEmbed } from "$lib/oembed";
-  import { onMount } from "svelte";
+
+  import { CodeBlock } from "@skeletonlabs/skeleton";
 
   export let oembed: VideoOEmbed;
 </script>
@@ -10,7 +11,7 @@
   <iframe
     srcdoc={oembed.html}
     class="mw-[100%] outline-1 outline-black outline"
-    width="480px"
+    width="100%"
     height="480px"
   />
   <div class="flex justify-between text-gray-400">
@@ -27,4 +28,7 @@
       </div>
     {/if}
   </div>
+</section>
+<section>
+  <CodeBlock language="html" code={oembed.html}></CodeBlock>
 </section>
