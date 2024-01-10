@@ -24,10 +24,9 @@
 </svelte:head>
 
 <AppShell>
-  <slot />
-  <svelte:fragment slot="pageFooter">
-    <div class="container mx-auto p-8 space-y-8">
-      <!--<Footer />-->
-    </div>
-  </svelte:fragment>
+  <div class="container mx-auto p-8 space-y-8">
+    <h1 class="h1">oEmbed Examples</h1>
+    <slot />
+    <Footer />
+  </div>
 </AppShell>
