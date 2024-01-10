@@ -1,6 +1,12 @@
+export enum Type {
+    photo = 'photo',
+    video = 'video',
+    link = 'link',
+    rich = 'rich'
+}
 
 export type OEmbed = {
-    type: 'photo' | 'video' | 'link' | 'rich',
+    type: Type,
     version: '1.0',
     title?: string,
     author_name?: string,
@@ -14,21 +20,21 @@ export type OEmbed = {
 }
 
 export type RichOEmbed = OEmbed & {
-    type: 'rich',
+    type: Type.rich,
     html: string,
     width: number,
     height: number
 }
 
 export type VideoOEmbed = OEmbed & {
-    type: 'video',
+    type: Type.video
     html: string,
     width: number,
     height: number
 }
 
 export type PhotoOEmbed = OEmbed & {
-    type: 'photo',
+    type: Type.photo,
     url: string,
     width: number,
     height: number

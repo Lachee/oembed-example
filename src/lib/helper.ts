@@ -13,3 +13,18 @@ export function validateUrl(str : string) : URL|undefined {
         return undefined;
     }
 }
+
+export function getCORS() : Record<string, string> {
+    return {
+        'Access-Control-Allow-Origin': '*',
+        'Access-Control-Allow-Methods': 'GET, HEAD, OPTIONS',
+        'Access-Control-Allow-Headers': '*',
+        'Access-Control-Expose-Headers': '*',
+    }
+}
+
+export function setCORS(response : Response) { 
+    const cors = getCORS();
+    for(let heading in cors) 
+        response.headers.append(heading, cors[heading]);
+}
