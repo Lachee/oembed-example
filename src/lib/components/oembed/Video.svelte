@@ -14,7 +14,7 @@
     height="480px"
   />
   <div class="flex justify-between text-gray-400">
-    <div>Photo ({oembed.width} x {oembed.height})</div>
+    <div>Video ({oembed.width} x {oembed.height})</div>
     {#if oembed.provider_name}
       <div>
         provider: <a href={oembed.provider_url || "#"}>{oembed.provider_name}</a
