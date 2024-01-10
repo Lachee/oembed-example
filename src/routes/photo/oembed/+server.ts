@@ -16,9 +16,9 @@ export const GET: RequestHandler = async (evt) => {
         url: (new URL('/example_photo.jpg', new URL(evt.request.url).origin)).toString(),
         width: 2560,
         height: 1440,
-        thumbnail_url: (new URL('/example_photo.jpg', new URL(evt.request.url).origin)).toString(),
-        thumbnail_width: 2560,
-        thumbnail_height: 1440,
+        thumbnail_url: (new URL('/example_photo_thumbnail.jpg', new URL(evt.request.url).origin)).toString(),
+        thumbnail_width: 480,
+        thumbnail_height: 270,
         provider_name: 'oembed-example',
         provider_url: 'https://lachee.dev/'
     } satisfies PhotoOEmbed);
