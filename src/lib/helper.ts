@@ -28,3 +28,12 @@ export function setCORS(response : Response) {
     for(let heading in cors) 
         response.headers.append(heading, cors[heading]);
 }
+
+export function createOpenGraph(tags : Record<string, string>) : string {
+    let ogTags = [];
+    for (const name in tags) {
+        const value = tags[name].replaceAll('"', '\\"')
+        ogTags.push(`<meta property="og:${name}" content="${value}" />`);
+    }
+    return ogTags.join('\n');
+}
